@@ -138,8 +138,8 @@
         <div class="store-info">
             <p>위홀릭 유한회사</p>
             <p>경기도 서울특별시 강남구 뽀로로 55</p>
-            <p>대표 : </p>
-            <p>Contact : bill@weholic.com</p>
+            <p>대표 : 신지성</p>
+            <p>Contact : maybenoreply@weholic.com</p>
             <p>Web : www.weholic.com</p>
         </div>
 
@@ -313,7 +313,7 @@ function calculateTotal() {
     document.getElementById('total-price').innerText = formatNumber(total);
     document.getElementById('total-discount').innerText = formatNumber(totalDiscount);
     document.getElementById('total-items').innerText = formatNumber(totalItemsCount); // 수정된 총 항목 수
-    document.getElementById('credit-card-total').innerText = formatNumber(saleTotal); // 총 결제 금액
+    document.getElementById('credit-card-total').innerText = formatNumber(saleTotal - totalDiscount); // 총 결제 금액
     document.getElementById('sale-total').innerText = formatNumber(saleTotal);
     document.getElementById('tax').innerText = formatNumber(tax.toFixed(0));
 }
