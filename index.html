@@ -15,8 +15,12 @@
         body {
             font-family: 'LINESeedKR-Bd', 'Courier New', Courier, monospace;
             margin: 0;
-            padding: 20px;
+            padding: 10px;
             background-color: #f4f4f4;
+            user-select: none; /* 선택 방지 */
+            -webkit-user-select: none; /* Safari와 Chrome에서 선택 방지 */
+            -moz-user-select: none; /* Firefox에서 선택 방지 */
+            -ms-user-select: none; /* IE와 Edge에서 선택 방지 */
         }
         .receipt {
             width: 350px;
@@ -24,7 +28,7 @@
             background: #fff;
             padding: 20px;
             border: 1px solid #ddd;
-            border-radius: 5px;
+            border-radius: 20px;
         }
         .logo {
             text-align: center;
@@ -93,6 +97,10 @@
         .print-button:hover {
             background-color: #e03a1d;
         }
+        
+        .discount {
+            display: none; /* 할인 금액을 숨깁니다 */
+        }
 
         /* 모바일에 맞춘 스타일 */
         @media (max-width: 1180px) {
@@ -101,8 +109,8 @@
                 padding: 15px; /* 패딩 조정 */
             }
             .logo img {
-            width: 200px;
-        }
+                width: 200px;
+            }
             .items th, .items td {
                 font-size: 13px; /* 모바일에서 폰트 크기 조정 */
                 padding: 4px; /* 패딩 조정 */
@@ -151,6 +159,7 @@
                     <th>상품명/거래명</th>
                     <th>수량(Q)</th>
                     <th>가격(￦/Q)</th>
+                    <th class="discount">할인액(￦)</th> <!-- 할인을 입력할 수 있는 열 -->
                 </tr>
             </thead>
             <tbody id="item-list">
@@ -158,40 +167,46 @@
                     <td>네이버플러스 멤버쉽 월간 이용권</td>
                     <td>1</td>
                     <td class="item-price">4800</td>
+                    <td class="discount">1</td>
                 </tr>
                 <tr>
                     <td>치지직 치트키</td>
                     <td>2</td>
                     <td class="item-price">14300</td>
+                    <td class="discount">1</td>
                 </tr>
                 <tr>
                     <td>ChatGPT Plus</td>
                     <td>1</td>
                     <td class="item-price">23000</td>
+                    <td class="discount">1</td>
                 </tr>
                 <tr>
                     <td>마켓컬리 멤버십</td>
                     <td>3</td>
                     <td class="item-price">1900</td>
+                    <td class="discount">1</td>
                 </tr>
                 <tr>
                     <td>삼성전자 갤럭시 S25 Ultra 256GB Sunnyside Yellow (GCS)</td>
                     <td>1</td>
                     <td class="item-price">1430000</td>
+                    <td class="discount">1</td>
                 </tr>
                 <tr>
                     <td>ㄴ정품 케이스</td>
                     <td>1</td>
                     <td class="item-price">30000</td>
+                    <td class="discount">1</td>
                 </tr>
             </tbody>
-            
         </table>
 
         <div class="total">
+            <p>총 수량: <span id="total-items">0</span></p> <!-- 총 항목을 합계 위로 이동 -->
             <p>합계: <span id="total-price">0</span> KRW</p>
-            <p>총 항목: <span id="total-items">0</span></p>
-            <p>총 결제금액: <span id="credit-card-total">0</span> KRW</p>
+            <p>할인 및 적립: <span id="total-discount">0</span> KRW</p>
+            <p>최종 결제금액: <span id="credit-card-total">0</span> KRW</p>
         </div>
 
         <div class="dashed-line"></div>
@@ -205,10 +220,6 @@
             <p>승인 번호: 88888888</p>
             <p>거래 일시: 2025-05-24 00:11:22</p>
             <p>가맹점 번호: KOREAAEROK</p>
-            <p>가맹점 번호: 9876543210</p>
-            <p>PAYKOREA: 1234 5678 9012</p>
-            <p>NOTICE: 매입사제출</p>
-            <p>승인 VAN사: KOREA 승인</p>
         </div>
 
         <!-- 부가세 정보 -->
@@ -217,7 +228,7 @@
             <p>비율: 10.0%</p>
             <p>판매합계: <span id="sale-total">0</span> KRW</p>
             <p>세금: <span id="tax">0</span> KRW</p>
-            <p>계산원 번호: 55 1</p>
+            <p>달러 환율: 1,335 KRW/USD</p>
             <p>날짜: 2025-05-24 00:11:22</p>
             <p>매장: POS 524 55 321</p>
             <p>사업자 등록번호: 106-86-82871</p>
@@ -239,52 +250,61 @@
         </div>
 
         <!-- 추가된 텍스트 -->
-        <div style="text-align: center; margin-top: 10px; font-size: 14px;">
-            <p>2025년 MX2 결산을 마칩니다.</p>
+        <div style="text-align: center; margin-top: 20px;">
+            <button class="print-button" onclick="printReceipt()">영수증 출력</button>
         </div>
-
-        <!-- 출력 버튼 -->
-        <button class="print-button" onclick="printReceipt()">영수증 출력</button>
-
     </div>
 
     <script>
-        // JavaScript to calculate the total price
+        // Right-click prevention
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        // Copy prevention
+        document.addEventListener('copy', function(e) {
+            e.preventDefault();
+        });
+
+        // Drag prevention
+        document.addEventListener('dragstart', function(e) {
+            e.preventDefault();
+        });
+
         function calculateTotal() {
-            let total = 0;
-            let totalItems = 0;
             const items = document.querySelectorAll('#item-list tr');
+            let total = 0;
+            let totalDiscount = 0;
+            let totalItemsCount = 0; // 총 항목 수를 위한 변수
 
             items.forEach(item => {
-                const quantity = parseInt(item.cells[1].textContent);
-                const price = parseInt(item.querySelector('.item-price').textContent);
-                total += quantity * price;
-                totalItems += quantity;
+                const price = parseInt(item.querySelector('.item-price').innerText);
+                const quantity = parseInt(item.cells[1].innerText);
+                const discount = parseInt(item.cells[3].innerText);
 
-                // Update the price display with formatted string
-                item.querySelector('.item-price').textContent = price.toLocaleString();
+                total += price * quantity;
+                totalDiscount += discount;
+                totalItemsCount += quantity; // 수량을 더함
             });
 
-            // Calculate tax (10%)
-            const tax = Math.round(total * 0.1);
+            const tax = total * 0.1; // 10% 세금
+            const saleTotal = total - totalDiscount;
 
-            // Update the total price, total items, and credit card total in the receipt
-            document.getElementById('total-price').textContent = total.toLocaleString();
-            document.getElementById('total-items').textContent = totalItems;
-            document.getElementById('credit-card-total').textContent = total.toLocaleString();
-
-            // Update sale total (same as total price) and tax in the receipt
-            document.getElementById('sale-total').textContent = total.toLocaleString();
-            document.getElementById('tax').textContent = tax.toLocaleString();
+            document.getElementById('total-price').innerText = total;
+            document.getElementById('total-discount').innerText = totalDiscount;
+            document.getElementById('total-items').innerText = totalItemsCount; // 수정된 총 항목 수
+            document.getElementById('credit-card-total').innerText = saleTotal; // 총 결제 금액
+            document.getElementById('sale-total').innerText = saleTotal;
+            document.getElementById('tax').innerText = tax.toFixed(0);
         }
-
-        // Call the function to calculate totals
-        calculateTotal();
 
         function printReceipt() {
-            alert("인쇄용지는 B4를 추천합니다 :D");
+            calculateTotal();
             window.print();
         }
+
+        // 페이지 로드 시 합계 계산
+        window.onload = calculateTotal;
     </script>
 </body>
 </html>
