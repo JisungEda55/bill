@@ -271,32 +271,52 @@
             e.preventDefault();
         });
 
-        function calculateTotal() {
-            const items = document.querySelectorAll('#item-list tr');
-            let total = 0;
-            let totalDiscount = 0;
-            let totalItemsCount = 0; // 총 항목 수를 위한 변수
-
-            items.forEach(item => {
-                const price = parseInt(item.querySelector('.item-price').innerText);
-                const quantity = parseInt(item.cells[1].innerText);
-                const discount = parseInt(item.cells[3].innerText);
-
-                total += price * quantity;
-                totalDiscount += discount;
-                totalItemsCount += quantity; // 수량을 더함
-            });
-
-            const tax = total * 0.1; // 10% 세금
-            const saleTotal = total - totalDiscount;
-
-            document.getElementById('total-price').innerText = total;
-            document.getElementById('total-discount').innerText = totalDiscount;
-            document.getElementById('total-items').innerText = totalItemsCount; // 수정된 총 항목 수
-            document.getElementById('credit-card-total').innerText = saleTotal; // 총 결제 금액
-            document.getElementById('sale-total').innerText = saleTotal;
-            document.getElementById('tax').innerText = tax.toFixed(0);
+        // Function to format numbers with commas
+        function formatNumber(num) {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
         }
+
+        // Function to format numbers with commas
+function formatNumber(num) {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
+function calculateTotal() {
+    const items = document.querySelectorAll('#item-list tr');
+    let total = 0;
+    let totalDiscount = 0;
+    let totalItemsCount = 0; // 총 항목 수를 위한 변수
+
+    items.forEach(item => {
+        const priceElement = item.querySelector('.item-price');
+        const quantityElement = item.cells[1];
+        const discountElement = item.cells[3];
+
+        const price = parseInt(priceElement.innerText);
+        const quantity = parseInt(quantityElement.innerText);
+        const discount = parseInt(discountElement.innerText);
+
+        total += price * quantity;
+        totalDiscount += discount;
+        totalItemsCount += quantity; // 수량을 더함
+
+        // 포맷된 값으로 업데이트
+        priceElement.innerText = formatNumber(price); // 가격에 쉼표 추가
+        quantityElement.innerText = formatNumber(quantity); // 수량에 쉼표 추가
+        discountElement.innerText = formatNumber(discount); // 할인액에 쉼표 추가
+    });
+
+    const tax = total * 0.1; // 10% 세금
+    const saleTotal = total;
+
+    // Update displayed values with formatted numbers
+    document.getElementById('total-price').innerText = formatNumber(total);
+    document.getElementById('total-discount').innerText = formatNumber(totalDiscount);
+    document.getElementById('total-items').innerText = formatNumber(totalItemsCount); // 수정된 총 항목 수
+    document.getElementById('credit-card-total').innerText = formatNumber(saleTotal); // 총 결제 금액
+    document.getElementById('sale-total').innerText = formatNumber(saleTotal);
+    document.getElementById('tax').innerText = formatNumber(tax.toFixed(0));
+}
 
         function printReceipt() {
             calculateTotal();
