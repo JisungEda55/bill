@@ -31,7 +31,7 @@
             margin-bottom: 10px;
         }
         .logo img {
-            width: 150px;
+            width: 300px;
         }
         .store-info, .transaction-info, .card-info, .summary, .footer {
             margin-bottom: 10px;
@@ -146,8 +146,8 @@
             <thead>
                 <tr>
                     <th>상품명/거래명</th>
-                    <th>수량</th>
-                    <th>가격(KRW)</th>
+                    <th>수량(Q)</th>
+                    <th>가격(￦/Q)</th>
                 </tr>
             </thead>
             <tbody id="item-list">
@@ -158,10 +158,16 @@
                 </tr>
                 <tr>
                     <td>치지직 치트키</td>
-                    <td>1</td>
+                    <td>2</td>
                     <td class="item-price">14300</td>
                 </tr>
+                <tr>
+                    <td>ChatGPT Plus</td>
+                    <td>1</td>
+                    <td class="item-price">20000</td>
+                </tr>
             </tbody>
+            
         </table>
 
         <div class="total">
@@ -191,8 +197,8 @@
         <div class="summary">
             <p>부가세 포함</p>
             <p>비율: 10.0%</p>
-            <p>판매합계: 3,636 KRW</p>
-            <p>세금: 364 KRW</p>
+            <p>판매합계: <span id="sale-total">0</span> KRW</p>
+            <p>세금: <span id="tax">0</span> KRW</p>
             <p>계산원 번호: 55 1</p>
             <p>날짜: 2025-05-24 00:11:22</p>
             <p>매장: POS 524 55 321</p>
@@ -201,12 +207,12 @@
 
         <!-- 하단 메시지 -->
         <div class="footer">
-            <p>888일 이내에 제품을 환불할 수 있으며 영수증이 필요합니다. 특정 조건에 따라 환불이 불가할 수 있습니다. 자세한 사항은 메일 문의해주시기 바랍니다.</p>
+            <p>이 영수증은 법적효력이 없으며 계약 서류의 목적으로 작성되지 않았습니다.<br>이용자간의 편의를 위해 작성되었으며, 자세한 사항은 메일로 문의해주시기 바랍니다.</p>
         </div>
 
         <!-- QR 코드 -->
         <div class="barcode">
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=www.chzzk.naver.com" alt="QR Code">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=www.weholic.com" alt="QR Code">
         </div>
 
         <!-- 추가된 이미지 -->
@@ -231,12 +237,22 @@
                 const price = parseInt(item.querySelector('.item-price').textContent);
                 total += quantity * price;
                 totalItems += quantity;
+
+                // Update the price display with formatted string
+                item.querySelector('.item-price').textContent = price.toLocaleString();
             });
 
-            // Update the total price and total items in the receipt
+            // Calculate tax (10%)
+            const tax = Math.round(total * 0.1);
+
+            // Update the total price, total items, and credit card total in the receipt
             document.getElementById('total-price').textContent = total.toLocaleString();
             document.getElementById('total-items').textContent = totalItems;
             document.getElementById('credit-card-total').textContent = total.toLocaleString();
+
+            // Update sale total (same as total price) and tax in the receipt
+            document.getElementById('sale-total').textContent = total.toLocaleString();
+            document.getElementById('tax').textContent = tax.toLocaleString();
         }
 
         // Call the function to calculate totals
