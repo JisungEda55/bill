@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeHolic 영수증</title>
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/R0cntdXb/WHFV.webp">
+    <style>
+        @font-face {
+            font-family: 'LINESeedKR-Bd';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+        }
+        body {
+            font-family: 'LINESeedKR-Bd', 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 10px;
+            background-color: #f4f4f4;
+            user-select: none; /* 선택 방지 */
+            -webkit-user-select: none; /* Safari와 Chrome에서 선택 방지 */
+            -moz-user-select: none; /* Firefox에서 선택 방지 */
+            -ms-user-select: none; /* IE와 Edge에서 선택 방지 */
+        }
+        .receipt {
+            width: 350px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .logo img {
+            width: 300px;
+        }
+        .store-info, .transaction-info, .card-info, .summary, .footer {
+            margin-bottom: 10px;
+        }
+        .store-info p, .transaction-info p, .card-info p, .summary p, .footer p {
+            margin: 0;
+            line-height: 1.5;
+            font-size: 12px;
+        }
+        .dashed-line {
+            border-top: 1px dashed #000;
+            margin: 10px 0;
+        }
+        .items {
+            width: 100%;
+            margin-bottom: 10px;
+            border-collapse: collapse;
+        }
+        .items th, .items td {
+            font-size: 12px;
+            padding: 5px;
+            text-align: left;
+        }
+        .items th {
+            background: #f8f8f8;
+        }
+        .total {
+            text-align: right;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .barcode {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .barcode img {
+            width: 35%;
+        }
+        .footer p {
+            font-size: 10px;
+            color: #666;
+            text-align: justify;
+        }
+        /* 추가된 스타일 */
+        .print-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #fc3c1c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 20px;
+            font-family: 'LINESeedKR-Bd', 'Courier New', Courier, monospace; /* 폰트 적용 */
+        }
+        .print-button:hover {
+            background-color: #e03a1d;
+        }
+        
+        .discount {
+            display: none; /* 할인 금액을 숨깁니다 */
+        }
+
+        /* 모바일에 맞춘 스타일 */
+        @media (max-width: 1180px) {
+            .receipt {
+                width: 90%; /* 모바일에서 적절한 너비 */
+                padding: 15px; /* 패딩 조정 */
+            }
+            .logo img {
+                width: 200px;
+            }
+            .items th, .items td {
+                font-size: 13px; /* 모바일에서 폰트 크기 조정 */
+                padding: 4px; /* 패딩 조정 */
+            }
+            .total {
+                font-size: 13px; /* 모바일에서 합계 폰트 크기 조정 */
+            }
+            .footer p {
+                font-size: 9px; /* 모바일에서 하단 메시지 폰트 크기 조정 */
+            }
+            .print-button {
+                font-size: 12px; /* 모바일에서 버튼 폰트 크기 조정 */
+            }
+        }
+        .items td a.link {
+            color: #000; /* 링크 색상 */
+            text-decoration: none; /* 밑줄 제거 */
+            font-size: 12px; /* 폰트 크기 조정 */
+            margin-left: 6px; /* 상품명과 링크 사이의 간격 */
+            float: right; /* 링크를 오른쪽으로 정렬 */
+        }
+
+        .items td a.link:hover {
+            color: #fc3c1c; /* 마우스 호버 시 링크 색상 */
+        }
+    </style>
+</head>
+<body>
+    <div class="receipt">
+        <!-- 로고 -->
+        <div class="logo">
+            <img src="https://i.postimg.cc/PxMFx6Gf/cco-2.png" alt="WeHolic Logo">
+        </div>
+
+        <!-- 사업자 정보 -->
+        <div class="store-info">
+            <p>위홀릭 유한회사</p>
+            <p>경기도 서울특별시 강남구 뽀로로 55</p>
+            <p>대표 : 신지성</p>
+            <p>Contact : billz@weholic.com</p>
+            <p>Web : www.weholic.com</p>
+        </div>
+
+        <div class="dashed-line"></div>
+
+        <!-- 거래 내역 -->
+        <div class="transaction-info">
+            <p><strong>거래내역:</strong> 00000000</p>
+            <p><strong>문의번호:</strong> 00000000</p>
+            <p><strong>결제사업자:</strong> 네이버페이, NHN페이코, 토스페이</p>
+        </div>
+
+        <!-- 아이템 목록 -->
+        <table class="items">
+            <thead>
+                <tr>
+                    <th>상품명/거래명</th>
+                    <th>수량(Q)</th>
+                    <th>가격(￦/Q)</th>
+                    <th class="discount">할인액(￦)</th> <!-- 할인을 입력할 수 있는 열 -->
+                </tr>
+            </thead>
+            <tbody id="item-list">
+                <tr>
+                    <td>
+                        AMD Ryzen 9 7900X 12코어, 24스레드 언락 데스크탑 프로세서 
+                        <a href="https://www.11st.co.kr/products/pa/4969320459?couponPriceYn=Y" class="link" target="_blank">@11번가</a>
+                    </td>
+                    <td>1</td>
+                    <td class="item-price">497990</td>
+                    <td class="discount">134138</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="total">
+            <p>총 수량: <span id="total-items">0</span></p>
+            <p>합계: <span id="total-price">0</span> KRW</p>
+            <p>할인 및 적립: <span id="total-discount">0</span> KRW</p>
+            <p>최종 결제금액: <span id="credit-card-total">0</span> KRW</p>
+        </div>
+
+        <div class="dashed-line"></div>
+
+        <!-- 카드 정보 -->
+        <div class="card-info">
+            <p>*** 신용승인정보(고객용) ***</p>
+            <p>결제 카드: Kbank, PAYCO 체크</p>
+            <p>네이버페이: N회</p>
+            <p>토스 페이: N회</p>
+            <p>승인 번호: 88888888</p>
+            <p>거래 일시: 2025-05-24 00:11:22</p>
+            <p>가맹점 번호: KOREAAEROK</p>
+        </div>
+
+        <!-- 부가세 정보 -->
+        <div class="summary">
+            <p>부가세 포함</p>
+            <p>비율: 10.0%</p>
+            <p>판매합계: <span id="sale-total">0</span> KRW</p>
+            <p>세금: <span id="tax">0</span> KRW</p>
+            <p>달러 환율: 1,335 KRW/USD</p>
+            <p>날짜: 2025-05-24 00:11:22</p>
+            <p>매장: POS 524 55 321</p>
+            <p>사업자 등록번호: 106-86-82871</p>
+        </div>
+
+        <!-- 하단 메시지 -->
+        <div class="footer">
+            <p>이 영수증은 법적효력이 없으며 계약 서류의 목적으로 작성되지 않았습니다.<br>이용자간의 편의를 위해 작성되었으며, 자세한 사항은 메일로 문의해주시기 바랍니다.</p>
+        </div>
+
+        <!-- QR 코드 -->
+        <div class="barcode">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://i.postimg.cc/Y0kLfSvJ/SOBI.webp" alt="QR Code">
+        </div>
+
+        <!-- 추가된 이미지 -->
+        <div class="additional-logo">
+            <img src="https://i.postimg.cc/QtdK6Jch/CTFDJE.png" alt="CertifiedJISUNG" style="width: 100px; display: block; margin: 3px auto;">
+        </div>
+
+        <!-- 추가된 텍스트 -->
+        <div style="text-align: center; margin-top: 20px;">
+            <button class="print-button" onclick="printReceipt()">영수증 출력</button>
+        </div>
+    </div>
+
+    <script>
+        // Right-click prevention
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        // Copy prevention
+        document.addEventListener('copy', function(e) {
+            e.preventDefault();
+        });
+
+        // Drag prevention
+        document.addEventListener('dragstart', function(e) {
+            e.preventDefault();
+        });
+
+        // Function to format numbers with commas
+        function formatNumber(num) {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        }
+
+        // Function to format numbers with commas
+function formatNumber(num) {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
+function calculateTotal() {
+    const items = document.querySelectorAll('#item-list tr');
+    let total = 0;
+    let totalDiscount = 0;
+    let totalItemsCount = 0; // 총 항목 수를 위한 변수
+
+    items.forEach(item => {
+        const priceElement = item.querySelector('.item-price');
+        const quantityElement = item.cells[1];
+        const discountElement = item.cells[3];
+
+        const price = parseInt(priceElement.innerText);
+        const quantity = parseInt(quantityElement.innerText);
+        const discount = parseInt(discountElement.innerText);
+
+        total += price * quantity;
+        totalDiscount += discount;
+        totalItemsCount += quantity; // 수량을 더함
+
+        // 포맷된 값으로 업데이트
+        priceElement.innerText = formatNumber(price); // 가격에 쉼표 추가
+        quantityElement.innerText = formatNumber(quantity); // 수량에 쉼표 추가
+        discountElement.innerText = formatNumber(discount); // 할인액에 쉼표 추가
+    });
+
+    const tax = total * 0.1; // 10% 세금
+    const saleTotal = total;
+
+    // Update displayed values with formatted numbers
+    document.getElementById('total-price').innerText = formatNumber(total);
+    document.getElementById('total-discount').innerText = formatNumber(totalDiscount);
+    document.getElementById('total-items').innerText = formatNumber(totalItemsCount); // 수정된 총 항목 수
+    document.getElementById('credit-card-total').innerText = formatNumber(saleTotal - totalDiscount); // 총 결제 금액
+    document.getElementById('sale-total').innerText = formatNumber(saleTotal);
+    document.getElementById('tax').innerText = formatNumber(tax.toFixed(0));
+}
+
+        function printReceipt() {
+            calculateTotal();
+            window.print();
+        }
+
+        // 페이지 로드 시 합계 계산
+        window.onload = calculateTotal;
+    </script>
+</body>
+</html>
