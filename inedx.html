@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>진솔한 이야기, 해솔피드</title>
+<link rel="icon" type="image/png" href="https://i.ibb.co/sj484q8/Feed.webp">
+    <style>
+        @font-face {
+            font-family: 'NanumSquareNeoBold';
+            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.eot);
+            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.ttf) format("truetype");
+        }
+        @font-face {
+            font-family: 'NanumSquareNeo';
+            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot);
+            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.ttf) format("truetype");
+        }
+        @font-face {
+            font-family: 'NanumSquareNeoExtraBold';
+            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot);
+            src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.ttf) format("truetype");
+        }
+        body {
+            font-family: 'NanumSquareNeoBold';
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0);
+            padding: 0px;
+            text-align: left;
+            margin-bottom: 25px;
+        }
+	footer {
+            background-color: rgba(0, 0, 0, 0);
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 1px;
+        }
+        h1, h2, .series-title, .recent-content-title {
+            font-family: 'NanumSquareNeoExtraBold';
+        }
+        p, .series-description {
+            font-family: 'NanumSquareNeoBold';
+        }
+        .series-feed {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 20px;
+            scroll-behavior: smooth;
+        }
+        .series-card {
+            background-color: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            padding: 20px;
+            min-width: 300px;
+            flex: 0 0 auto;
+            scroll-snap-align: center;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        .series-card:hover {
+            transform: translateY(-10px);
+        }
+        .series-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+        .series-title {
+            font-size: 1.5em;
+            margin: 20px 0 10px;
+            color: #333;
+        }
+        .series-description {
+            color: #777;
+            font-size: 1em;
+        }
+        .series-separator {
+            width: 100%;
+            height: 1px;
+            background-color: #ddd;
+            margin: 20px 0;
+        }
+        .recent-content {
+            margin-top: 40px;
+        }
+        .recent-content-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .recent-content-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .recent-content-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+        .recent-content-title {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+            color: #333;
+            transition: color 0.3s;
+        }
+        .recent-content-item:hover .recent-content-title {
+            color: #2272eb;
+        }
+        .recent-content-description {
+            color: #777;
+        }
+        footer a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const episodes = [
+                { id: 4, title: "ep.1 전기차, KG 모빌리티의 마지막 기회.", imageUrl: "https://resources-fe.toss.im/image-optimize/width=3840,quality=75/https%3A%2F%2Fstatic.toss.im%2Fillusts-content%2Fcover-slash.png", clickUrl: "https://jisungeda55.github.io/picabooletter/ep1" },
+                { id: 3, title: "Pick.Car.Boot! Info.", imageUrl: "https://resources-fe.toss.im/image-optimize/width=3840,quality=75/https%3A%2F%2Fstatic.toss.im%2Fillusts%2Fimg-fandustry-lp-record.jpg", clickUrl: "https://jisungeda55.github.io/picabooletter" },
+                { id: 2, title: "[테스트]Rivian(리비안)의 새로운 소비자 경험환경.", imageUrl: "https://resources-fe.toss.im/image-optimize/width=3840,quality=75/https%3A%2F%2Fstatic.toss.im%2Fillusts-content%2Fimg-everyday-economics-concert-ticket-cover.png", clickUrl: "https://jisungeda55.github.io/picabooletter"},
+                { id: 1, title: "[테스트]내 드림카의 환생.", imageUrl: "https://resources-fe.toss.im/image-optimize/width=3840,quality=75/https%3A%2F%2Fstatic.toss.im%2Fillusts-content%2Fimg-tossfeed-cover-percent-bank.jpg", clickUrl: "https://jisungeda55.github.io/picabooletter"},
+                { id: 5, title: "ep.5 새로운 금융 트렌드.", imageUrl: "https://resources-fe.toss.im/image-optimize/width=3840,quality=75/https%3A%2F%2Fstatic.toss.im%2Fillusts%2Fimg-toss-ir-1.jpg", clickUrl: "https://jisungeda55.github.io/picabooletter/ep5" }
+            ];
+
+            const recentContentContainer = document.querySelector('.recent-content');
+
+            // Initially load only the first 2 episodes
+            let loadedEpisodesCount = 0;
+            let isLoading = false;
+            function loadEpisodes(count) {
+                if (isLoading) return;
+                isLoading = true;
+                const episodesToLoad = episodes.slice(loadedEpisodesCount, loadedEpisodesCount + count);
+                episodesToLoad.forEach((episode, index) => {
+                    const contentItem = document.createElement('div');
+                    contentItem.className = 'recent-content-item';
+                    contentItem.addEventListener('click', () => {
+                        window.location.href = episode.clickUrl;
+                    });
+
+                    const contentImage = document.createElement('img');
+                    contentImage.src = episode.imageUrl;
+                    contentImage.alt = episode.title;
+                    contentItem.appendChild(contentImage);
+
+                    const contentText = document.createElement('div');
+                    const contentTitle = document.createElement('div');
+                    contentTitle.className = 'recent-content-title';
+                    contentTitle.textContent = episode.title;
+
+                    contentText.appendChild(contentTitle);
+                    contentItem.appendChild(contentText);
+
+                    recentContentContainer.appendChild(contentItem);
+
+                    // Add separator line between episodes
+                    if (loadedEpisodesCount + index < episodes.length - 1) {
+                        const separator = document.createElement('div');
+                        separator.className = 'series-separator';
+                        recentContentContainer.appendChild(separator);
+                    }
+
+                    // Make the content item visible with animation
+                    setTimeout(() => {
+                        contentItem.classList.add('visible');
+                    }, 100 * index);
+                });
+                loadedEpisodesCount += count;
+                isLoading = false;
+            }
+
+            // Load initial episodes
+            loadEpisodes(2);
+
+            // Load more episodes on scroll
+            function handleScroll() {
+                if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100 && !isLoading) {
+                    if (loadedEpisodesCount < episodes.length) {
+                        loadEpisodes(1);
+                    }
+                }
+            }
+
+            let ticking = false;
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        handleScroll();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>시리즈 피드</h1>
+        <p>최신 금융 정보를 만나보세요</p>
+    </header>
+
+    <h1>오리지널 시리즈</h1>
+    <p>금융을 바라보는 새로운 관점</p>
+    <div class="series-feed">
+        <!-- 시리즈 카드 1 -->
+        <div class="series-card" onclick="window.location.href='https://jisungeda55.github.io/picabooletter/ep1'">
+            <img src="https://resources-fe.toss.im/image-optimize/width=3840,quality=75/https%3A%2F%2Fstatic.toss-internal.com%2Fipd-tcs%2Ftoss_core%2Fstaging%2Fde2686aa-bd94-4e56-b50c-626813129e71.png" alt="시리즈 1" style="pointer-events: none;">
+            <div class="series-title">똑똑 집 보러 왔어요</div>
+            <div class="series-description">집으로 보는 경제</div>
+        </div>
+
+        <!-- 시리즈 카드 2 -->
+        <div class="series-card" onclick="window.location.href='https://jisungeda55.github.io/picabooletter'">
+            <img src="https://resources-fe.toss.im/image-optimize/width=3840,quality=75/https%3A%2F%2Fstatic.toss-internal.com%2Fipd-tcs%2Ftoss_core%2Fstaging%2F914164df-45d5-45c0-b085-ee02c1feee01.png" alt="시리즈 2">
+            <div class="series-title">My Money Book</div>
+            <div class="series-description">잘 살아갈 우리를 위한 금융생활 안내서</div>
+        </div>
+
+        <!-- 시리즈 카드 3 -->
+        <div class="series-card" onclick="window.location.href='https://jisungeda55.github.io/picabooletter'">
+            <img src="https://resources-fe.toss.im/image-optimize/width=3840,quality=75/https%3A%2F%2Fstatic.toss.im%2Fillusts-content%2Fimg-cut-insurance-series.jpg" alt="시리즈 3">
+            <div class="series-title">THE MONEY BOOK</div>
+            <div class="series-description">잘 살아갈 우리를 위한 금융생활 안내서</div>
+        </div>
+
+        <!-- 시리즈 카드 4 -->
+        <div class="series-card" onclick="window.location.href='https://jisungeda55.github.io/picabooletter/ep5'">
+            <img src="https://resources-fe.toss.im/image-optimize/width=3840,quality=95/https%3A%2F%2Fstatic.toss.im%2Fillusts%2Fimg-everyday-economic-key-2.png" alt="시리즈 4">
+            <div class="series-title">새로운 금융 트렌드</div>
+            <div class="series-description">최신 금융 트렌드와 동향을 소개합니다</div>
+        </div>
+    </div>
+
+    <div class="recent-content">
+        <h2>방금 올라온 콘텐츠</h2>
+        <p>실시간 업데이트 소식 살펴보기</p>
+    </div>
+
+    <footer>
+        <p>© 	2024 금융 정보 제공자. 모든 권리 보유.</p>
+        <p><a href="https://blog.toss.im/">🔗 개인정보 처리방침</a> | <a href="https://blog.toss.im/">🔗 이용 약관</a></p>
+    </footer>
+</body>
+</html>
