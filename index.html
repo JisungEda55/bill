@@ -136,11 +136,9 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const episodes = [
-                { id: 4, title: "ep.1 전기차, KG 모빌리티의 마지막 기회.", imageUrl: "https://resources-fe.toss.im/image-optimize/width=3840,quality=75/https%3A%2F%2Fstatic.toss.im%2Fillusts-content%2Fcover-slash.png", clickUrl: "https://jisungeda55.github.io/picabooletter/ep1" },
-                { id: 3, title: "Pick.Car.Boot! Info.", imageUrl: "https://resources-fe.toss.im/image-optimize/width=3840,quality=75/https%3A%2F%2Fstatic.toss.im%2Fillusts%2Fimg-fandustry-lp-record.jpg", clickUrl: "https://jisungeda55.github.io/picabooletter" },
-                { id: 2, title: "[테스트]Rivian(리비안)의 새로운 소비자 경험환경.", imageUrl: "https://resources-fe.toss.im/image-optimize/width=3840,quality=75/https%3A%2F%2Fstatic.toss.im%2Fillusts-content%2Fimg-everyday-economics-concert-ticket-cover.png", clickUrl: "https://jisungeda55.github.io/picabooletter"},
-                { id: 1, title: "[테스트]내 드림카의 환생.", imageUrl: "https://resources-fe.toss.im/image-optimize/width=3840,quality=75/https%3A%2F%2Fstatic.toss.im%2Fillusts-content%2Fimg-tossfeed-cover-percent-bank.jpg", clickUrl: "https://jisungeda55.github.io/picabooletter"},
-                { id: 5, title: "ep.5 새로운 금융 트렌드.", imageUrl: "https://resources-fe.toss.im/image-optimize/width=3840,quality=75/https%3A%2F%2Fstatic.toss.im%2Fillusts%2Fimg-toss-ir-1.jpg", clickUrl: "https://jisungeda55.github.io/picabooletter/ep5" }
+                { id: 1, title: "Pick.Car.Boot! Info.", imageUrl: "https://resources-fe.toss.im/image-optimize/width=3840,quality=75/https%3A%2F%2Fstatic.toss.im%2Fillusts%2Fimg-fandustry-lp-record.jpg", clickUrl: "https://jisungeda55.github.io/picabooletter", date: "2024.11.02" },
+                { id: 2, title: "[Bills] 10월의 소비를 알려드립니다.", imageUrl: "https://i.ibb.co/RP3Kd1K/b1.webp", clickUrl: "https://jisungeda55.github.io/picabooletter", date: "2024.11.02" },
+                { id: 3, title: "[에피소드] 나가자, 정보의 바다로.", imageUrl: "https://i.ibb.co/CzXZZ3K/ep1.webp", clickUrl: "https://jisungeda55.github.io/picabooletter/ep5", date: "2024.11.02" }
             ];
 
             const recentContentContainer = document.querySelector('.recent-content');
@@ -169,7 +167,15 @@
                     contentTitle.className = 'recent-content-title';
                     contentTitle.textContent = episode.title;
 
+                    const contentDate = document.createElement('div');
+                    contentDate.className = 'recent-content-date';
+                    contentDate.textContent = `${episode.date}`;
+                    contentDate.style.color = '#8b95a1';
+                    contentDate.style.fontSize = '1em';
+                    contentDate.style.marginTop = '11px';
+
                     contentText.appendChild(contentTitle);
+                    contentText.appendChild(contentDate);
                     contentItem.appendChild(contentText);
 
                     recentContentContainer.appendChild(contentItem);
