@@ -31,7 +31,7 @@
 
 ## Additional Items
 
-- **빔프로젝터**: Magcubic HY300 PRO - 48,809 KRW ✅ 
+- **빔프로젝터**: Magcubic HY300 PRO - 34,019 KRW ✅ 
   [알리익스프레스](https://ko.aliexpress.com/item/1005006967446375.html?spm=a2g0o.productlist.main.5.244d47a8YbyNFZ&algo_pvid=d7954622-7bf6-4ff1-beb0-5386866822d6&algo_exp_id=d7954622-7bf6-4ff1-beb0-5386866822d6-2&pdp_npi=4%40dis%21KRW%21127948%2153029%21%21%21643.28%21266.62%21%402101590d17304764109238742e9eb5%2112000038885850063%21sea%21KR%210%21ABX&curPageLogUid=x9XtvzEiDZov&utparam-url=scene%3Asearch%7Cquery_from%3A)
 
 - **키보드**: Aigo A108 - 26,508 KRW  
