@@ -43,7 +43,7 @@
 - ✅ **마이크**: Fifine AM8 - 56,900 KRW (KbBC)    
   [(알리익스프레스 CN)](https://ko.aliexpress.com/item/1005006033905180.html?srcSns=sns_Copy&spreadType=socialShare&bizType=ProductDetail&social_params=6000186029999&aff_fcid=72124d100d5043f584df6c79100dfa11-1730479262764-04743-_ooE273N&tt=MG&aff_fsk=_ooE273N&aff_platform=default&sk=_ooE273N&aff_trace_key=72124d100d5043f584df6c79100dfa11-1730479262764-04743-_ooE273N&shareId=6000186029999&businessType=ProductDetail&platform=AE&terminal_id=84f85f9e180147558ffc326b01ddf6d8&afSmartRedirect=y)
 
-__**써멀구리스**: AMECH SGT-4S 6g with spatula - 7,800 KRW__      
+- **써멀구리스**: AMECH SGT-4S 6g with spatula - 7,800 KRW       
   [(네이버)](https://smartstore.naver.com/amech83/products/8194536821?NaPm=ct%3Dm2yxtq54%7Cci%3D2555989f80e9bf06eedf3433595321a9509f64ff%7Ctr%3Dslsl%7Csn%3D7945014%7Chk%3Df65600617c2218eb721b425aa10b46636223c175&nl-query=%EC%97%90%EC%9D%B4%EB%A9%95)
 
 - **Total with Additional Items**: **2,013,791 KRW**
