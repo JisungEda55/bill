@@ -16,7 +16,7 @@
 - **GPU**: [GIGABYTE] 지포스 RTX 4060 EAGLE OC ICE D6 8GB - 441,000 KRW  
   [네이버](https://smartstore.naver.com/compuzone/products/10026985478?nl-query=RTX4060&NaPm=ci%3D5a880684f86d459aa4d77b931c83d6f0%7Cct%3Dm2yumatr%7Ctr%3Dnslsl%7Csn%3D157367%7Chk%3D1af8981257140d3c79c8f4a30d88ce38c3ed07d3)
 
-- **SSD**: MSI 게이밍 스파티움 M482 PCIe 4.0 NVMe M.2 2TB 내장 SSD - 154,580 KRW  
+- **SSD**: MSI 게이밍 스파티움 M482 PCIe 4.0 NVMe M.2 2TB 내장 SSD - 168,580 KRW **가격 변동됨, 다른 상품 찾는것 주천**
   [11번가](https://www.11st.co.kr/products/pa/6827568278?&trTypeCd=MAT55&trCtgrNo=585021)
 
 - **케이스(빅타워)**: BRAVOTEC SWORD S830 RGB 타이탄 글래스 블랙 - 61,500 KRW  
