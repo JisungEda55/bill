@@ -2,7 +2,7 @@
 
 ## My XPC
 
-- ✅ **CPU**: AMD Ryzen 9 7900X - 471,704 KRW
+- ✅ **CPU**: AMD Ryzen 9 7900X - 471,704 KRW       
   [(11번가)](https://www.11st.co.kr/products/pa/4969320459?couponPriceYn=Y)
 
 - **Cooler**: DEEPCOOL AG620 - 37,400 KRW   
