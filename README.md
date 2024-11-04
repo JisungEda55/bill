@@ -10,7 +10,7 @@
 - **메인보드**: MSI MAG B650 토마호크 WIFI - 287,500 KRW  
   [네이버](https://smartstore.naver.com/msi_distributor/products/10949040542?NaPm=ct%3Dm2yucurs%7Cci%3Dfb7d31af43c960358f21e6109d785f05b11a0b70%7Ctr%3Dslsf%7Csn%3D5228678%7Chk%3D21b91e037ad7de63ca1ac1288a49df4f14f9da5a&nl-au=08d557dfd567408c88b11b96d9fc2cfb&nl-query=MSI+MAG+B650+%ED%86%A0%EB%A7%88%ED%98%B8%ED%81%AC+WIFI)
 
-- **RAM**: KingBank 하이닉스 M 다이, DDR5, 1.4V, 24GB x 2, 48GB, 6800MHz - 161,218 KRW  
+- **RAM**: KingBank 하이닉스 M 다이, DDR5, 1.4V, 24GB x 2, 48GB, 6800MHz - 161,218 KRW ✅ 
   [알리익스프레스](https://ko.aliexpress.com/item/1005006995676770.html?spm=a2g0o.productlist.main.9.63046fddFHuJQA&algo_pvid=596fe70d-fdc9-40bf-a980-5e3cd12314c5&algo_exp_id=596fe70d-fdc9-40bf-a980-5e3cd12314c5-4&pdp_npi=4%40dis%21KRW%21376502%21161218%21%21%211892.92%21810.55%21%40210156fc17304720992421303e13a6%2112000042621608029%21sea%21KR%210%21ABX&curPageLogUid=VXCBnW8zRO52&utparam-url=scene%3Asearch%7Cquery_from%3A)
 
 - **GPU**: [GIGABYTE] 지포스 RTX 4060 EAGLE OC ICE D6 8GB - 441,000 KRW  
@@ -37,7 +37,7 @@
 - **키보드**: Aigo A108 - 26,508 KRW  
   [알리익스프레스](https://ko.aliexpress.com/item/1005007539817700.html?spm=a2g0o.productlist.main.3.b7c8xcdhxcdhUa&algo_pvid=8af351c7-2350-4f88-821c-210f08f41716&algo_exp_id=8af351c7-2350-4f88-821c-210f08f41716-1&pdp_npi=4%40dis%21KRW%2181680%2126508%21%21%21410.66%21133.27%21%402140c1c317304765491932559e93c6%2112000041211876202%21sea%21KR%210%21ABX&curPageLogUid=m0MjMI5LS6nk&utparam-url=scene%3Asearch%7Cquery_from%3A)
 
-- **모니터**: 프리플로우 Vuti27F18PF - 117,372 KRW  
+- **모니터**: 프리플로우 Vuti27F18PF ✅ - 117,372 KRW  
   [알리익스프레스](https://ko.aliexpress.com/item/1005007586768709.html?srcSns=sns_Copy&spreadType=socialShare&bizType=ProductDetail&social_params=6000186018683&aff_fcid=a4bbf4777c7f4ab6b1e7d2a2946d7942-1730477603810-04279-_onmjBUr&tt=MG&aff_fsk=_onmjBUr&aff_platform=default&sk=_onmjBUr&aff_trace_key=a4bbf4777c7f4ab6b1e7d2a2946d7942-1730477603810-04279-_onmjBUr&shareId=6000186018683&businessType=ProductDetail&platform=AE&terminal_id=84f85f9e180147558ffc326b01ddf6d8&afSmartRedirect=y)
 
 - **마이크**: Fifine AM8 - 56,900 KRW  
