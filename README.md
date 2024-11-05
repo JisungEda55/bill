@@ -14,7 +14,7 @@
 - ✅ **RAM**: KingBank 하이닉스 M 다이, DDR5, 1.4V, 24GB x 2, 48GB, 6800MHz - 159,754 KRW (NPCD)    
   [(알리익스프레스 CN)](https://ko.aliexpress.com/item/1005006995676770.html?spm=a2g0o.productlist.main.9.63046fddFHuJQA&algo_pvid=596fe70d-fdc9-40bf-a980-5e3cd12314c5&algo_exp_id=596fe70d-fdc9-40bf-a980-5e3cd12314c5-4&pdp_npi=4%40dis%21KRW%21376502%21161218%21%21%211892.92%21810.55%21%40210156fc17304720992421303e13a6%2112000042621608029%21sea%21KR%210%21ABX&curPageLogUid=VXCBnW8zRO52&utparam-url=scene%3Asearch%7Cquery_from%3A)
 
-- **GPU**: [GIGABYTE] 지포스 RTX 4060 EAGLE OC ICE D6 8GB - 441,000 KRW     
+- ✅ **GPU**: [GIGABYTE] 지포스 RTX 4060 EAGLE OC ICE D6 8GB - 441,000 KRW     
   [(네이버)](https://smartstore.naver.com/compuzone/products/10026985478?nl-query=RTX4060&NaPm=ci%3D5a880684f86d459aa4d77b931c83d6f0%7Cct%3Dm2yumatr%7Ctr%3Dnslsl%7Csn%3D157367%7Chk%3D1af8981257140d3c79c8f4a30d88ce38c3ed07d3)
 
 - ✅ **SSD**: acer PREDATOR FM70000 HEATSINK M.2 NVMe 2TB SSD W.DRAM - 171,983 KRW (KbBC)   
@@ -23,7 +23,7 @@
 - ✅ **케이스(빅타워)**: BRAVOTEC SWORD S830 RGB 타이탄 글래스 블랙 - 55,600 KRW     
   [(옥션)]([https://smartstore.naver.com/compuzone/products/4868971740?nl-query=BRAVOTEC%20SWORD%20S830%20RGB&tr=nslsl](http://itempage3.auction.co.kr/DetailView.aspx?itemno=B769509348))
 
-- **파워(PSU)**: 마이크로닉스 Classic II 750W 80PLUS GOLD 풀모듈러 PCIE 5.0 - 141,500 KRW      
+- ✅ **파워(PSU)**: 마이크로닉스 Classic II 750W 80PLUS GOLD 풀모듈러 PCIE 5.0 - 141,000 KRW      
   [(네이버)](https://smartstore.naver.com/naeunnaeil/products/8681687482?nl-query=750W%20%ED%8C%8C%EC%9B%8C%20Gold&tr=nslsl)
 
 - **Total**: **1,756,402 KRW**
