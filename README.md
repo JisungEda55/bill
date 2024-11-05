@@ -8,8 +8,8 @@
 - ✅ **Cooler**: DEEPCOOL AG620 - 38,000 KRW   
   [(네이버)](https://smartstore.naver.com/pcp/products/10284438192?NaPm=ct%3Dm2ytywgg%7Cci%3D145a7792d76646ca823d26130415afedaf881ae1%7Ctr%3Dslct%7Csn%3D278714%7Chk%3D86d3e2cd99c286f15d179179176075b8b02e055c&nl-query=DEEPCOOL+AG620)
 
-- ✅ **메인보드**: MSI MAG B650 토마호크 WIFI - 271,000 KRW     
-  [(네이버)](https://smartstore.naver.com/msi_distributor/products/10949040542?NaPm=ct%3Dm2yucurs%7Cci%3Dfb7d31af43c960358f21e6109d785f05b11a0b70%7Ctr%3Dslsf%7Csn%3D5228678%7Chk%3D21b91e037ad7de63ca1ac1288a49df4f14f9da5a&nl-au=08d557dfd567408c88b11b96d9fc2cfb&nl-query=MSI+MAG+B650+%ED%86%A0%EB%A7%88%ED%98%B8%ED%81%AC+WIFI)
+- ✅ **메인보드**: MSI MAG B650 토마호크 WIFI - 253,500 KRW     
+  [(지마켓)]([[https://smartstore.naver.com/msi_distributor/products/10949040542?NaPm=ct%3Dm2yucurs%7Cci%3Dfb7d31af43c960358f21e6109d785f05b11a0b70%7Ctr%3Dslsf%7Csn%3D5228678%7Chk%3D21b91e037ad7de63ca1ac1288a49df4f14f9da5a&nl-au=08d557dfd567408c88b11b96d9fc2cfb&nl-query=MSI+MAG+B650+%ED%86%A0%EB%A7%88%ED%98%B8%ED%81%AC+WIFI](https://item.gmarket.co.kr/Item?goodscode=2623467729)](https://item.gmarket.co.kr/Item?goodscode=2623467729))
 
 - ✅ **RAM**: KingBank 하이닉스 M 다이, DDR5, 1.4V, 24GB x 2, 48GB, 6800MHz - 159,754 KRW (NPCD)    
   [(알리익스프레스 CN)](https://ko.aliexpress.com/item/1005006995676770.html?spm=a2g0o.productlist.main.9.63046fddFHuJQA&algo_pvid=596fe70d-fdc9-40bf-a980-5e3cd12314c5&algo_exp_id=596fe70d-fdc9-40bf-a980-5e3cd12314c5-4&pdp_npi=4%40dis%21KRW%21376502%21161218%21%21%211892.92%21810.55%21%40210156fc17304720992421303e13a6%2112000042621608029%21sea%21KR%210%21ABX&curPageLogUid=VXCBnW8zRO52&utparam-url=scene%3Asearch%7Cquery_from%3A)
@@ -48,5 +48,7 @@
   [(네이버)](https://smartstore.naver.com/amech83/products/8194536821?NaPm=ct%3Dm2yxtq54%7Cci%3D2555989f80e9bf06eedf3433595321a9509f64ff%7Ctr%3Dslsl%7Csn%3D7945014%7Chk%3Df65600617c2218eb721b425aa10b46636223c175&nl-query=%EC%97%90%EC%9D%B4%EB%A9%95)
 
 - **Total with Additional Items**: **2,013,791 KRW**
+---------
+- 2M << 
 
 ![계산식](https://i.ibb.co/vDVwKp9/rounded-image-1.png)
