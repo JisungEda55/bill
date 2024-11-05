@@ -2,10 +2,10 @@
 
 ## My XPC
 
-- ✅ **CPU**: AMD Ryzen 9 7900X - 363,852 KRW       
+- ✅ **CPU**: AMD Ryzen 9 7900X - 364,000 KRW       
   [(11번가)](https://www.11st.co.kr/products/pa/4969320459?couponPriceYn=Y)
 
-- **Cooler**: DEEPCOOL AG620 - 37,400 KRW   
+- ✅ **Cooler**: DEEPCOOL AG620 - 38,000 KRW   
   [(네이버)](https://smartstore.naver.com/pcp/products/10284438192?NaPm=ct%3Dm2ytywgg%7Cci%3D145a7792d76646ca823d26130415afedaf881ae1%7Ctr%3Dslct%7Csn%3D278714%7Chk%3D86d3e2cd99c286f15d179179176075b8b02e055c&nl-query=DEEPCOOL+AG620)
 
 - ✅ **메인보드**: MSI MAG B650 토마호크 WIFI - 271,000 KRW     
@@ -20,8 +20,8 @@
 - ✅ **SSD**: acer PREDATOR FM70000 HEATSINK M.2 NVMe 2TB SSD W.DRAM - 171,983 KRW (KbBC)   
   [(알리익스프레스 KR)]([https://www.11st.co.kr/products/pa/6827568278?&trTypeCd=MAT55&trCtgrNo=585021](https://ko.aliexpress.com/item/1005006636014321.html?srcSns=sns_Copy&spreadType=socialShare&bizType=ProductDetail&social_params=6000188196424&aff_fcid=f59b246c36c44a048568258fc26fb342-1730744044896-09746-_oE4WHnD&tt=MG&aff_fsk=_oE4WHnD&aff_platform=default&sk=_oE4WHnD&aff_trace_key=f59b246c36c44a048568258fc26fb342-1730744044896-09746-_oE4WHnD&shareId=6000188196424&businessType=ProductDetail&platform=AE&terminal_id=1657215ac899479b939e3aa40d7d05da&afSmartRedirect=y&gatewayAdapt=glo2kor))
 
-- **케이스(빅타워)**: BRAVOTEC SWORD S830 RGB 타이탄 글래스 블랙 - 61,500 KRW     
-  [(네이버)](https://smartstore.naver.com/compuzone/products/4868971740?nl-query=BRAVOTEC%20SWORD%20S830%20RGB&tr=nslsl)
+- ✅ **케이스(빅타워)**: BRAVOTEC SWORD S830 RGB 타이탄 글래스 블랙 - 55,600 KRW     
+  [(옥션)]([https://smartstore.naver.com/compuzone/products/4868971740?nl-query=BRAVOTEC%20SWORD%20S830%20RGB&tr=nslsl](http://itempage3.auction.co.kr/DetailView.aspx?itemno=B769509348))
 
 - **파워(PSU)**: 마이크로닉스 Classic II 750W 80PLUS GOLD 풀모듈러 PCIE 5.0 - 141,500 KRW      
   [(네이버)](https://smartstore.naver.com/naeunnaeil/products/8681687482?nl-query=750W%20%ED%8C%8C%EC%9B%8C%20Gold&tr=nslsl)
