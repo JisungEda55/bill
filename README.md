@@ -8,7 +8,7 @@
 - **Cooler**: DEEPCOOL AG620 - 37,400 KRW   
   [(네이버)](https://smartstore.naver.com/pcp/products/10284438192?NaPm=ct%3Dm2ytywgg%7Cci%3D145a7792d76646ca823d26130415afedaf881ae1%7Ctr%3Dslct%7Csn%3D278714%7Chk%3D86d3e2cd99c286f15d179179176075b8b02e055c&nl-query=DEEPCOOL+AG620)
 
-- **메인보드**: MSI MAG B650 토마호크 WIFI - 287,500 KRW     
+- ✅ **메인보드**: MSI MAG B650 토마호크 WIFI - 271,000 KRW     
   [(네이버)](https://smartstore.naver.com/msi_distributor/products/10949040542?NaPm=ct%3Dm2yucurs%7Cci%3Dfb7d31af43c960358f21e6109d785f05b11a0b70%7Ctr%3Dslsf%7Csn%3D5228678%7Chk%3D21b91e037ad7de63ca1ac1288a49df4f14f9da5a&nl-au=08d557dfd567408c88b11b96d9fc2cfb&nl-query=MSI+MAG+B650+%ED%86%A0%EB%A7%88%ED%98%B8%ED%81%AC+WIFI)
 
 - ✅ **RAM**: KingBank 하이닉스 M 다이, DDR5, 1.4V, 24GB x 2, 48GB, 6800MHz - 159,754 KRW (NPCD)    
